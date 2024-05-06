@@ -1,14 +1,11 @@
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
+import Header from "./components/header/header";
 
 function App() {
     return (
         <>
-            <div style={{ gap: "20px", display: "flex" }}>
-                <Link to="/">홈 이동</Link>
-                <Link to="/test">테스트 이동</Link>
-                <Link to="/test/new">새로운 테스트 이동</Link>
-            </div>
+            <Header />
             <Routes>
                 <Route path="/" element={<div>홈페이지입니다.</div>} />
                 <Route path="/test" element={<div>테스트 페이지입니다.</div>} />
