@@ -1,13 +1,14 @@
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Header from "./components/header/header";
+import HomePage from "./pages/homepage";
 
 function App() {
     return (
         <>
             <Header />
             <Routes>
-                <Route path="/" element={<div>홈페이지입니다.</div>} />
+                <Route path="/" element={<HomePage />} />
                 <Route path="/test" element={<div>테스트 페이지입니다.</div>} />
                 <Route
                     path="/test/new"
