@@ -1,6 +1,6 @@
 const HomePage = () => {
     return (
-        <div className={"container flex flex-col w-10/12 m-auto gap-3"}>
+        <div className={"container flex flex-col w-10/12 m-auto gap-3 overflow-auto no-scrollbar"}>
             <div className={"container flex flex-row flex-0 gap-2 mt-4"}>
                 <span className={"font-bold"}>전체</span>
                 <span>나의 글</span>
