@@ -5,6 +5,7 @@ import Profile from "./pages/profile";
 import Header from "./components/header/header";
 import Post from "./pages/post";
 import Footer from "./components/footer/footer";
+import PostCreate from "./pages/post/create";
 
 function App() {
     return (
@@ -14,8 +15,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/post/:id" element={<Post />} />
-                    <Route path="/test" element={<div>테스트 페이지입니다.</div>} />
-                    <Route path="/test/new" element={<div>새로운 테스트 페이지입니다.</div>} />
+                    <Route path="/post/create" element={<PostCreate />} />
                     <Route path="*" element={<div>페이지를 찾을 수 없습니다.</div>} />
                     <Route path="/profile" element={<Profile />} />
                 </Routes>

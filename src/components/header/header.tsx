@@ -11,7 +11,7 @@ const Header = ({ className }: HeaderProps) => {
                 <span className="text-xl font-bold">Blog Title</span>
             </div>
             <div className={"space-x-3"}>
-                <Link to="/">글쓰기</Link>
+                <Link to="/post/create">글쓰기</Link>
                 <Link to="/test">게시글</Link>
                 <Link to="/profile">프로필</Link>
             </div>
