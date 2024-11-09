@@ -1,4 +1,12 @@
 import PostItem from "src/components/PostItem";
+import Carousel from "src/components/carousel/Carousel";
+
+const dummyImages = [
+    "https://picsum.photos/1200/150?random=1",
+    "https://picsum.photos/1200/150?random=2",
+    "https://picsum.photos/1200/150?random=3",
+    "https://picsum.photos/1200/150?random=4",
+];
 
 const dummyData = [
     {
@@ -24,6 +32,9 @@ const dummyData = [
 const HomePage = () => {
     return (
         <div className={"container flex overflow-auto flex-col gap-3 mx-auto w-10/12 no-scrollbar"}>
+            <div className="mt-[30px]">
+                <Carousel images={dummyImages} />
+            </div>
             <div className={"container flex flex-row gap-2 mt-4 flex-0"}>
                 <span className={"font-bold"}>전체</span>
                 <span>나의 글</span>

@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
+interface HeaderProps {
+    className?: string;
+}
+
+const Header = ({ className }: HeaderProps) => {
     return (
-        <div className={"w-full flex gap-4 justify-between px-8 py-4 border-b-[1px] "}>
+        <div className={`flex gap-4 justify-between px-8 py-4 w-full border-b-[1px] ${className}`}>
             <div>
                 <span className="text-xl font-bold">Blog Title</span>
             </div>
