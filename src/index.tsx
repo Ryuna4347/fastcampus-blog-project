@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import app from "@firebaseApp";
 
-const root = ReactDOM.createRoot(
-    document.getElementById("root") as HTMLElement
-);
+console.log(app);
+
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <BrowserRouter>
         <React.StrictMode>

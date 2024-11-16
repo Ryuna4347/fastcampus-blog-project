@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
         "target": "es5",
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
@@ -21,8 +20,5 @@
         "require": ["tsconfig-paths/register"]
     },
     "include": ["src"],
-    "paths": {
-        "@/*": ["src/*"],
-        "@components/*": ["src/components/*"]
-    }
+    "extends": "./tsconfig.paths.json"
 }

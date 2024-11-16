@@ -1,5 +1,5 @@
-import PostItem from "src/components/PostItem";
-import Carousel from "src/components/carousel/Carousel";
+import PostItem from "@components/PostItem";
+import Carousel from "@components/carousel/Carousel";
 
 const dummyImages = [
     "https://picsum.photos/1200/150?random=1",
