@@ -1,28 +1,51 @@
-import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import HomePage from "./pages/homepage";
-import Profile from "./pages/profile";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/header";
-import Post from "./pages/post";
 import Footer from "./components/footer/footer";
+import HomePage from "./pages/homepage/index";
+import Post from "./pages/post/index";
 import PostCreate from "./pages/post/create";
+import Profile from "./pages/profile/index";
+import SignInPage from "./pages/sign-in/index";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import app from "./firebaseApp";
 
-function App() {
+const App = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
+        }
+    });
+
     return (
-        <div className="flex flex-col min-h-screen">
-            <Header className="fixed top-0 z-50 w-full" />
-            <main className="flex-grow mt-[61px] mb-[61px]">
+        <div className="flex flex-col h-screen">
+            <Header className="w-full" />
+            <main className="overflow-auto flex-grow">
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/post/:id" element={<Post />} />
-                    <Route path="/post/create" element={<PostCreate />} />
-                    <Route path="*" element={<div>페이지를 찾을 수 없습니다.</div>} />
-                    <Route path="/profile" element={<Profile />} />
+                    {isAuthenticated ? (
+                        <>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/post/:id" element={<Post />} />
+                            <Route path="/post/create" element={<PostCreate />} />
+                            <Route path="*" element={<div>페이지를 찾을 수 없습니다.</div>} />
+                            <Route path="/profile" element={<Profile />} />
+                        </>
+                    ) : (
+                        <>
+                            <Route path="/login" element={<SignInPage />} />
+                            <Route path="*" element={<SignInPage />} />
+                        </>
+                    )}
                 </Routes>
             </main>
-            <Footer className="fixed bottom-0 z-50 w-full" />
+            <Footer className="w-full" />
         </div>
     );
-}
+};
 
 export default App;

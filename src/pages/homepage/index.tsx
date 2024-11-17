@@ -31,7 +31,7 @@ const dummyData = [
 
 const HomePage = () => {
     return (
-        <div className={"container flex overflow-auto flex-col gap-3 mx-auto w-10/12 no-scrollbar"}>
+        <div className={"container flex overflow-auto flex-col gap-3 mx-auto w-10/12"}>
             <div className="mt-[30px]">
                 <Carousel images={dummyImages} />
             </div>
